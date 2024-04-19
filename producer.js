@@ -26,7 +26,7 @@ const produce = async () => {
 	if (!(topics.includes(topicKafka))){
 		console.log(`producer - create topic`)
 		await admin.createTopics({
-			topics: [{ topic: topicKafka, numPartitions: 1, replicationFactor: 1 }],
+			topics: [{ topic: topicKafka, numPartitions: 3, replicationFactor: 2 }],
 	  	});
 	}
 	console.log(`producer - topics: ${admin.listTopics()}`)
